@@ -32,7 +32,7 @@ public class ConversorMoedasAPI {
 
 	    JsonObject json = JsonParser.parseString(content.toString()).getAsJsonObject();
 
-	    // Verifica sucesso (depende da API, pode ser um campo 'success' ou 'result')
+	 
 	    if (json.has("success") && !json.get("success").getAsBoolean()) {
 	        throw new Exception("Erro na API: " + json.getAsJsonObject("error").get("info").getAsString());
 	    }
